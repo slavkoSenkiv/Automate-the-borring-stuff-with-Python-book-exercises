@@ -22,17 +22,12 @@ Some knowledge of mathematics could give you the exact answer and save
 you the trouble of writing a program, but programmers are notoriously
 bad at math.
 
- defineSide = random.randint(0, 1)
-    if coinFlip == 0:
-        coinSide = 'T'
-    else:
-        coinSide = 'H'
-lineOfFlips[i] = coinSide
 """
 import random
 lineOfFlips = []
+times = 10000
 
-for i in range(6):
+for i in range(times):
     defineSide = random.randint(0, 1)
     if defineSide == 0:
         coinSide = 'T'
@@ -41,6 +36,24 @@ for i in range(6):
     lineOfFlips.append(coinSide)
 
 print(lineOfFlips)
+
+
+caseH = 0
+caseT = 0
+for i in range(times - 5):
+
+    if lineOfFlips[i] == 'H' and lineOfFlips[i + 1] == 'H' and lineOfFlips[i + 2] == 'H' \
+            and lineOfFlips[i + 3] == 'H' and lineOfFlips[i + 4] == 'H' and lineOfFlips[i + 5] == 'H':
+        caseH += 1
+    elif lineOfFlips[i] == 'T' and lineOfFlips[i + 1] == 'T' and lineOfFlips[i + 2] == 'T' \
+            and lineOfFlips[i + 3] == 'T' and lineOfFlips[i + 4] == 'T' and lineOfFlips[i + 5] == 'T':
+        caseT += 1
+
+print('there are ' + str(caseH) + ' H cases. and ' + str(caseT) + ' T cases')
+
+
+
+
 
 
 
