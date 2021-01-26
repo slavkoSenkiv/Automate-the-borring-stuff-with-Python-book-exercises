@@ -1,39 +1,6 @@
 """
 #dicionaries and structuring data.py
 #The Dictionary Data Type
-
-birthdays = {'Alice': 'Apr 1', 'Bob': 'Dec 12', 'Carol': 'Mar 4'}
-while True:
-    print('Enter a name: (blank to quit)')
-    name = input()
-    if name == '':
-        break
-    if name in birthdays:
-        print(birthdays[name] + ' is the birthday of ' + name)
-    else:
-         print('I do not have birthday information for ' + name)
-         print('What is their birthday?')
-         bday = input()
-         birthdays[name] = bday
-         print('Birthday database updated.')
-
-birthdays = {'a': 1, 'b': 2, 'c': 3}
-
-while True:
-    print('enter the name')
-    name = input()
-    if name == 'q':
-        break
-
-    if name in birthdays:
-        print('the bday of ' + name + ' is ' + str(birthdays[name]))
-    else:
-        print('there is not that name in the base')
-        print('enter his bday')
-        newBDay = input()
-        birthdays[name] = newBDay
-        print('bday base updated')
-
 #The keys(), values(), and items() Methods
 
 spam = {'color': 'red', 'age': 42}
