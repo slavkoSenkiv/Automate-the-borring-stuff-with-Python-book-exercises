@@ -1,8 +1,89 @@
+"""
+print('hello')
+print('world')
+
+print('hello', end=' 234')
+print('world')
+
+print('cats', 'dogs', 'mice' )
+print('cats', 'dogs', 'mice', sep=', ')
+
+def a():
+    print('a() starts')
+    b()
+    d()
+    print('a() returns')
+
+def b():
+    print('b() starts')
+    c()
+    print('b() returns')
+
+def c():
+    print('c() starts')
+    print('c() returns')
+
+def d():
+    print('d() starts')
+    print('d() returns')
+
+a()
+
+Local Scopes Cannot Use Variables in Other Local Scopes
+def spam():
+    eggs = 31337
+spam()
+print(eggs)
+
+Local Scopes Cannot Use Variables in Other Local Scopes
+
+def spam():
+     eggs = 99
+     bacon()
+     print(eggs)
+def bacon():
+     ham = 101
+     eggs = 0
+spam()
+
+working exmpl
+def spam():
+    print(bacon())
+
+def bacon():
+    return 22
+
+spam()
+
+Global Variables Can Be Read from a Local Scope
+
+def spam():
+    print(eggs)
+eggs = 42
+spam()
+print(eggs)
+
+Local and Global Variables with the Same Name
+
+def spam():
+    eggs = 'spam local'
+    print(eggs)
+
+def bacon():
+    eggs = 'bacon local'
+    print(eggs)
+    spam()
+    print(eggs)
+
+eggs = 'global'
+bacon()
+print(eggs)
+"""
+
+
 
 
 """
-zigzag right arrow my version
-
 lines = 0
 space = ' '
 while lines <= 10:
@@ -14,58 +95,6 @@ while lines <= 20:
     lines = lines - 1
     if lines <= -1:
         break
-
-result
-**** № of lines = 0
- **** № of lines = 1
-  **** № of lines = 2
-   **** № of lines = 3
-    **** № of lines = 4
-     **** № of lines = 5
-      **** № of lines = 6
-       **** № of lines = 7
-        **** № of lines = 8
-         **** № of lines = 9
-          **** № of lines = 10
-           **** № of lines = 11
-          **** № of lines = 10
-         **** № of lines = 9
-        **** № of lines = 8
-       **** № of lines = 7
-      **** № of lines = 6
-     **** № of lines = 5
-    **** № of lines = 4
-   **** № of lines = 3
-  **** № of lines = 2
- **** № of lines = 1
-**** № of lines = 0
-
-zigzag left arrow my version
-
-
-
-result
-          **** № of lines = 10
-         **** № of lines = 9
-        **** № of lines = 8
-       **** № of lines = 7
-      **** № of lines = 6
-     **** № of lines = 5
-    **** № of lines = 4
-   **** № of lines = 3
-  **** № of lines = 2
- **** № of lines = 1
-**** № of lines = 0
- **** № of lines = 1
-  **** № of lines = 2
-   **** № of lines = 3
-    **** № of lines = 4
-     **** № of lines = 5
-      **** № of lines = 6
-       **** № of lines = 7
-        **** № of lines = 8
-         **** № of lines = 9
-          **** № of lines = 10
 
 long zigzag my version
 y = 100
@@ -87,6 +116,9 @@ def x():
 while y >= 0:
     x()
     y = y - 1
+    
+
+
 """
 import time, sys
 indent = 0 # How many spaces to indent
@@ -114,4 +146,8 @@ try:
 
 except KeyboardInterrupt:
     sys.exit()
+
+
+"""
+
 
