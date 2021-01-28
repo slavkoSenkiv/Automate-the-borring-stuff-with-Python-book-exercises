@@ -1,3 +1,5 @@
+# TODO compare to the book version
+
 import random
 
 playerWins = 0
