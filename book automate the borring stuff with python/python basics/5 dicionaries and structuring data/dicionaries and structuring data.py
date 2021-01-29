@@ -131,9 +131,36 @@ for character in message:
     count[character] = count[character] + 1
 
 print(count)
-
-
 """
+# Nested Dictionaries and Lists
+
+allGuests = {'alice': {'apple':  1, 'orange': 2},
+            'bob':   {'orange': 3, 'carrot': 4},
+            'mike':  {'carrot': 1, 'tomato': 5}}
+
+
+def totalBrought(guests, item):
+    numBrought = 0
+    for k, v in guests.items():
+        numBrought += v.get(item, 0)
+    return numBrought
+
+print('Number of things being brought:')
+print(' - apple ' + str(totalBrought(allGuests, 'apple')))
+print(' - orange ' + str(totalBrought(allGuests, 'orange')))
+print(' - carrot ' + str(totalBrought(allGuests, 'carrot')))
+print(' - tomato ' + str(totalBrought(allGuests, 'tomato')))
+print('TOTAL: ' + str(totalBrought(allGuests, 'apple') + totalBrought(allGuests, 'orange') + \
+totalBrought(allGuests, 'carrot') + totalBrought(allGuests, 'tomato')))
+
+
+
+
+
+
+
+
+
 
 
 
