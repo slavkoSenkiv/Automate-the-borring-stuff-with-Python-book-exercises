@@ -66,6 +66,8 @@ print(str(3) + ' hello there! my name is {name1} and i have {fingers1} fingers a
 
 # Useful String Methods
 """
+
+#The upper(), lower(), isupper(), and islower() Methods
 lover = 'lover case here'
 upper = 'UPPER CASE HERE'
 fewUpper = 'One upper here'
@@ -80,7 +82,25 @@ if feeling.lower() == 'great':
     print('+')
 else:
     print('-')
+    
+x = 'hello'
+y = 'HELLO'
+z = 'Hello'
+
+if x.lower():
+    print('+')
+if y.isupper():
+    print('+')
+if z.isupper():
+    print('+')
+else:
+    print('no')
 """
+# The isX() Methods
+print('123')
+
+
+
 
 
 
