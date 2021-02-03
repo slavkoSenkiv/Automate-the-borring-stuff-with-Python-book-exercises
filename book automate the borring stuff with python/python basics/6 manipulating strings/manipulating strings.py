@@ -95,9 +95,88 @@ if z.isupper():
     print('+')
 else:
     print('no')
+    
+    # The isX() Methods
+# input validation
+while True:
+    print('enter your age')
+    age = input()
+    if age.isnumeric():
+        break
+    print('enter numbers pls')
+
+while True:
+    print('enter your name')
+    name = input()
+    if name.isalpha() and name.istitle():
+        print('thx')
+        break
+    print('enter only letter and start with a capital')
+    
+    
+# The join() and split() Methods
+
+x = ','
+
+y = x.join(['a', 'b', 'c', 'd'])
+print(y)
+
+
+x = '1'
+
+y = x.join('hello')
+print(y)
+
+# The join() and split() Methods
+
+x = '1121314151617181910'
+y = x.split('1')
+print(y)
+
+spam = '''Dear Alice,
+How have you been? I am fine.
+There is a container in the fridge
+that is labeled "Milk Experiment."
+Please do not drink it.
+Sincerely,
+Bob'''
+
+print(spam.split('\n'))
+
+# Splitting Strings with the partition() Method
+
+
+print('hello world'.partition('w'))
+print('hewlwlo worwld'.partition('w'))
+
+before, sep, after = 'hello, dear world'.partition('dear')
+print(before)
+print(sep)
+print(after)
+
+x, y, z = 1, 2, 3
+print(x)
+print(y)
+print(z)
+
+# Justifying Text with the rjust(), ljust(), and center() Methods
+
+x = 'hello'
+y = 'hello'.rjust(30, '+')
+z = 'hello'.ljust(30, '+')
+print(x)
+print(y)
+print(z)
+
+print('hello'.rjust(5, '+'))
+print('hello'.rjust(6, '+'))
 """
-# The isX() Methods
-print('123')
+
+
+
+
+
+
 
 
 
