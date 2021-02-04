@@ -235,11 +235,8 @@ pyperclip.copy('hello world')
 
 print('hello there ' + pyperclip.paste())
 """
-# Project: Multi-Clipboard Automatic Messages
-"""
 
-"""
-# Step 1: Program Design and Data Structures
+
 
 
 
