@@ -170,7 +170,81 @@ print(z)
 
 print('hello'.rjust(5, '+'))
 print('hello'.rjust(6, '+'))
+
+print('PICNIC ITEMS1'.center(20, '-'))
+
+picnicItems = {'sandwiches': 4, 'apples': 12, 'cups': 4, 'cookies': 8000}
+
+
+def printPicnic(itemsDict, leftWidth, rightWidth):
+    print('PICNIC ITEMS'.center(leftWidth + rightWidth, '-'))
+    for k, v in itemsDict.items():
+        print(k.ljust(leftWidth, '.') + str(v).rjust(rightWidth))
+
+
+printPicnic(picnicItems, 12, 5)
+printPicnic(picnicItems, 20, 6)
+
+
+# by myself
+picnicItems = {'apples': 10, 'tomatoes': 300, 'sandwiches': 1}
+
+
+def printItems(dic, leftWidth, rightWidth):
+    print(' PICNIC ITEMS '.center(leftWidth + rightWidth, '+'))
+    for k, v in dic.items():
+        print(k.ljust(leftWidth, '.') + str(v).rjust(rightWidth))
+
+
+printItems(picnicItems, 20, 5)
+
+# Removing Whitespace with the strip(), rstrip(), and lstrip() Methods
+print('     hello world     '.strip(), end='')
+print('+')
+
+print('     hello world     '.lstrip(), end='')
+print('+')
+
+print('     hello world     '.rstrip(), end='')
+print('+')
+
+spam = 'SpamSpamBaconSpamEggsSpamSpam'
+
+print(spam.strip('ampS'))
+
+#my turn
+spamy = 'hello , there, + here. @we d love ! to here you!@'
+
+print(spamy.strip('l'))
+
+print('hello,there,+here.@wedlove!tohereyou!@'.strip('l'))
+
 """
+
+# Numeric Values of Characters with the ord() and chr() Functions
+# Copying and Pasting Strings with the pyperclip Module
+
+"""
+import pyperclip
+
+pyperclip.copy('hello worl1')
+print(pyperclip.paste())
+
+import pyperclip
+pyperclip.copy('hello world')
+
+print('hello there ' + pyperclip.paste())
+"""
+# Project: Multi-Clipboard Automatic Messages
+"""
+
+"""
+# Step 1: Program Design and Data Structures
+
+
+
+
+
 
 
 
