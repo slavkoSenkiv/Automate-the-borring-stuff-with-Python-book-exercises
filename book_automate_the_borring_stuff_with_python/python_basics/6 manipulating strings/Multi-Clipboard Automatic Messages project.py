@@ -6,3 +6,6 @@
 TEXT = {'agree': """Yes, I agree. That sounds fine to me""",
         'busy': """Sorry, can we do this later this week or next week""",
         'upsell': """Would ypu consider making this a monthly donation?"""}
+
+# Step 2: Handle Command Line Arguments
+
