@@ -22,3 +22,4 @@ if keyphrase in TEXT:
 else:
         print('there is no text for ' + keyphrase)
 
+# TODO make the program to input the desider recepient name inside the desired messege from winR bar for exmp the command will be "mclip Slavko busy" and the output will be "Dear slavko im busy"
