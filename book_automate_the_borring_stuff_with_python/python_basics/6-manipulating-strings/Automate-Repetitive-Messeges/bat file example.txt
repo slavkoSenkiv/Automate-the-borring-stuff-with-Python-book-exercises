@@ -1,0 +1,2 @@
+@py.exe C:\Users\YOUR_USER_NAME\mclip.py %*
+@pause
