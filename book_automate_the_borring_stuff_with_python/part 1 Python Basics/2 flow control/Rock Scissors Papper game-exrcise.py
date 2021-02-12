@@ -1,4 +1,4 @@
-# TODO compare to the book version
+# last repeat 12.02.21
 
 import random
 
