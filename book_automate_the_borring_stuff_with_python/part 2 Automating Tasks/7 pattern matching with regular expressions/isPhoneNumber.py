@@ -223,9 +223,101 @@ print(moNumber.group())
 print(moMyName.group())
 print(moSlavName.group())
 
-"""
-
 # Matching Specific Repetitions with Braces
+import re
+
+message = "HaHaHaHaHa"
+regex = re.compile(r'(Ha){2}')
+mo = regex.search(message)
+print(mo.group())
+
+# Matching with question mark
+import re
+
+message1 = "Admentures of Batman"
+message2 = "Admentures of Batwoman"
+regex = re.compile(r'Bat(wo)?man')
+mo1 = regex.search(message1)
+mo2 = regex.search(message2)
+print(mo1.group())
+print(mo2.group())
+
+# Matching with question mark
+import re
+
+message1 = "+380675968763"
+message2 = "0675968763"
+regex = re.compile(r'(\+\d\d)?(\d\d\d\d\d\d\d\d)')
+mo1 = regex.search(message1)
+mo2 = regex.search(message2)
+
+print(mo1.group(1))
+print(mo1.group(2))
+print(mo1.group())
+
+print(mo2.group(1))
+print(mo2.group(2))
+print(mo2.group())
+
+# Matching with star
+import re
+
+message1 = "Admentures of Batwoman"
+message2 = "Admentures of Batwowoman"
+message3 = "Admentures of Batwowowoman"
+message4 = "Admentures of Batwoman & Batwowoman & Batwowowoman"
+message5 = "Admentures of Batwowowoman & Batwoman & Batwowoman"
+message6 = "Admentures of Batman"
+
+regex = re.compile(r'Bat(wo)*man')
+
+mo1 = regex.search(message1)
+mo2 = regex.search(message2)
+mo3 = regex.search(message3)
+mo4 = regex.search(message4)
+mo6 = regex.search(message6)
+
+print(mo1.group())
+print(mo2.group())
+print(mo3.group())
+print(mo4.group())
+print(mo6.group())
+
+import re
+# The findall() Method
+message = 'Cell: 3-22-09 Work: 3-44-52'
+regex = re.compile(r'(\d)-(\d\d)-(\d\d)')
+mo = regex.findall(message)
+
+print(mo)
+
+import re
+# Character Classes
+xmasRegex = re.compile(r'\d+\s\w+')
+mo = xmasRegex.findall('12 drummers, 11 pipers, 10 lords, \n '
+                       '9 ladies, 8 maids, 7 swans, 6 geese, \n '
+                       '5 rings, 4 birds, 3 hens, 2 doves, 1 partridge')
+
+print(mo)
+
+import re
+# Making Your Own Character Classes
+
+vowelRegex = re.compile(r'[aeiouAEIOU]')
+consonantRegex = re.compile(r'[^aeiouAEIOU]')
+print(vowelRegex.findall('RoboCop eats baby food. BABY FOOD.'))
+print(consonantRegex.findall('RoboCop eats baby food. BABY FOOD.'))
+"""
+import re
+
+# The Caret and Dollar Sign Characters
+# The Wildcard Character
+
+
+
+
+
+
 
 
 
