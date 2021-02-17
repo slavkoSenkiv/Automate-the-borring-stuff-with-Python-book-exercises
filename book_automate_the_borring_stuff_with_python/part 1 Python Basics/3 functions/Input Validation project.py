@@ -1,7 +1,8 @@
 """
-Input Validation
-Add try and except statements to the previous project to detect whether the
-user types in a noninteger string. Normally, the int() function will raise a
+Last try  16 02 21
+
+dd try and except statements to the previous project to detect whether the
+ser types in a noninteger string. Normally, the int() function will raise a
 ValueError error if it is passed a noninteger string, as in int('puppy'). In the
 except clause, print a message to the user saying they must enter an integer
 """
