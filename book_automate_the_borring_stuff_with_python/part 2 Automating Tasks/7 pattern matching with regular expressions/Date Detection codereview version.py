@@ -14,22 +14,31 @@ def date_detector(text):
     months = []
     years = []
     dates = []
+
     for date in date_pattern.findall(text):
         days.append(int(date[0]))
         months.append(int(date[2]))
         years.append(int(date[4]))
 
+    print('days ' + 'len = ' + str(len(days)) + ' ', end='')
+    print(days)
+    print('months ' + 'len = ' + str(len(months)) + ' ', end='')
+    print(months)
+    print('years ' + 'len = ' + str(len(years)) + ' ', end='')
+    print(years)
+
+
     for num in range(len(days)):
 
-    #  appending dates in a list that dont need any filtering to detect wrong dates
+        #  appending dates in a list that don't need any filtering to detect wrong dates
         if months[num] not in (2, 4, 6, 9, 11):
             dates.append([days[num], months[num], years[num]])
 
-    # detecting those dates with months that have only 30 days
+        # detecting those dates with months that have only 30 days
         elif days[num] < 31 and months[num] in (4, 6, 9, 11):
             dates.append([days[num], months[num], years[num]])
 
-    # filtering leap years with Feb months that have 29 days
+        # filtering leap years with Feb months that have 29 days
         elif months[num] == 2 and days[num] == 29:
             if years[num] % 4 == 0:
                 if years[num] % 100 == 0:
@@ -38,7 +47,7 @@ def date_detector(text):
                 else:
                     dates.append([days[num], months[num], years[num]])
 
-    # appending Feb dates that have less than 29 days
+        # appending Feb dates that have less than 29 days
         elif months[num] == 2 and days[num] < 29:
             dates.append([days[num], months[num], years[num]])
 
