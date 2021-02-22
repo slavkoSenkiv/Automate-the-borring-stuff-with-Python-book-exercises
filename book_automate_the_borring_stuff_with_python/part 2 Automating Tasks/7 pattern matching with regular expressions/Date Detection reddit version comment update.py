@@ -10,6 +10,7 @@ def dateDetection(inputDate):
 
     month_range_30 = ['04','06','09','11']
     month_range_31 = ['01','03','05','07','08','10','12']
+
     if month in month_range_31:
         if int(day) > 31:
             print('incorrect Date....')

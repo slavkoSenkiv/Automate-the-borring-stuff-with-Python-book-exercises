@@ -1,6 +1,5 @@
 import re
 
-
 def date_detector(text):
     date_pattern = re.compile('''
     ([12][0-9]|3[0-1]|0?[1-9])             # to detect days from 1 to 31
@@ -9,6 +8,7 @@ def date_detector(text):
     ([./-])                                # to detect different seperations
     (2?1?[0-9][0-9][0-9])                  # to detect number of years from 1000-2999 years
      ''', re.VERBOSE)
+    # date regex
 
     days = []
     months = []
@@ -19,14 +19,7 @@ def date_detector(text):
         days.append(int(date[0]))
         months.append(int(date[2]))
         years.append(int(date[4]))
-
-    print('days ' + 'len = ' + str(len(days)) + ' ', end='')
-    print(days)
-    print('months ' + 'len = ' + str(len(months)) + ' ', end='')
-    print(months)
-    print('years ' + 'len = ' + str(len(years)) + ' ', end='')
-    print(years)
-
+    # append days/months/years to lists
 
     for num in range(len(days)):
 
@@ -54,7 +47,6 @@ def date_detector(text):
     if len(dates) > 0:
         for date in dates:
             print(date)
-
 
 data = '30-06-2012, 31-12-2012, 15-02-2002, 29-02-2004, 29-02-2002, 31-02-2004, 31-06-2012'
 
