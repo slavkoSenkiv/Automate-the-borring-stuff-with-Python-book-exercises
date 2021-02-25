@@ -1,10 +1,14 @@
-while True
+"""while True:
     age = input('enter age: ')
     try:
         age = int(age)
     except:
         print('enter digits')
+        continue
     if age < 1:
         print('pls enter positive number')
-    else:
-        break
+        continue
+    break"""
+
+import pyinputplus
+age = pyinputplus.inputEmail('enter mail...')
