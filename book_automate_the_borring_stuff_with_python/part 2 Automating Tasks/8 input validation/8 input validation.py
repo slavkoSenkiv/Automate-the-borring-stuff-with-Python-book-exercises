@@ -54,19 +54,38 @@ c = pyip.inputNum('entre num c : ', allowRegexes=[r'1'], blockRegexes=[r'[1-2]']
 # print('b', b)
 print('c', c)
 
-    """
-# Passing a Custom Validation Function to inputCustom()
+# Passing a Custom Validation Function to i     nputCustom()
 import pyinputplus as pyip
 
-def addUpToTen(number):
-    numberList = list(numbers)
-    for i, digit in enumerate(numberList):
-        numberList[i] = int(digit)
-    if sum(numberList) != 10:
-        raise Exeption('The digits must add up to 10, not %s.' % (sum(numbersList)))
-    return int(numbers)  # return an int form of numbers.
+def validNumber(number):
+    numberList = list(number)
+    summOfNumbers = 0
+    for digit in numberList:
+        summOfNumbers += int(digit)
+    if summOfNumbers != 10:
+        raise Exception('the digits sum must be 10, not %s.' % (summOfNumbers))
+    else:
+        print('+')
 
-# response = pyip.inputCustom(addsUpToTen)  # No parentheses after addsUpToTen here
+response = pyip.inputCustom(validNumber)
+
+    """
+# Passing a Custom Validation Function to i     nputCustom()
+import pyinputplus as pyip
+
+def validNumber(number):
+    numberList = list(number)
+    summOfNumbers = 0
+    for digit in numberList:
+        summOfNumbers += int(digit)
+    if summOfNumbers != 10:
+        raise Exception('the digits sum must be 10, not %s.' % (summOfNumbers))
+    else:
+        print('+')
+
+response = pyip.inputCustom(validNumber)
+
+
 
 
 
