@@ -17,7 +17,7 @@ while True:
                             prompt='Which type of protein you would like: \n',
                             numbered=True))
 
-    if pyp.inputYesNo('Do you want Cheese in your sandwich?(Y/N)\n') == 'yes':
+    if pyp.inputYesNo('Do you want Cheese in your sandSandwich Maker project codereview update Tomerikoo comment.pywich?(Y/N)\n') == 'yes':
         ingredients.append(pyp.inputMenu(['cheddar', 'swiss', 'mozzarella'], numbered=True))
 
     # using inputYesNo() for single ingredients with no further types
