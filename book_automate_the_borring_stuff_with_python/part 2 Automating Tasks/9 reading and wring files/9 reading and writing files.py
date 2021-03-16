@@ -44,10 +44,11 @@ from pathlib import Path
 import os
 os.makedirs('C:\\delicious\\walnut\\waffles')
 Path(r'C:\spam').mkdir()
-"""
 
 # Handling Absolute and Relative Paths
 from pathlib import Path
+import os
+import sys
 print(1)
 print(Path.cwd())
 print(Path.cwd().is_absolute())
@@ -55,10 +56,66 @@ print(Path('spam/bacon/eggs').is_absolute())
 
 print(2)
 x = Path('my/relative/path')
-print(Path.cwd()/x)
+y = Path.cwd()/x
+print(y)
+print(y.is_absolute())
+
+print(3)
+print(os.path.abspath('.'))
+print(os.path.abspath('.\\Scripts'))
+print(os.path.isabs('.'))
+print(os.path.isabs(os.path.abspath('.')))
+
+print(4)
+print(os.path.relpath('C:\\Windows', 'C:\\'))
+print(os.path.relpath('C:\\Windows', 'C:\\spam\\eggs'))
+
+# Getting the Parts of a File Path
+from pathlib import Path
+
+p = Path('C:/Users/Al/spam.txt')
+print(f'p = {p}')
+print(f'anchor = {p.anchor}')
+print(f'parent = {p.parent}')
+print(f'name = {p.name}')
+print(f'stem = {p.stem}')
+print(f'suffix = {p.suffix}')
+print(f'drive = {p.drive}')
+
+print(2)
+
+print(Path.cwd())
+print(0, Path.cwd().parents[0])
+print(1, Path.cwd().parents[1])
+print(2, Path.cwd().parents[2])
+print(3, Path.cwd().parents[3])
+print(4, Path.cwd().parents[4])
+print(5, Path.cwd().parents[5])
+print(6, Path.cwd().parents[6])
+
+# Finding File Sizes and Folder Contents
+import os
+from pathlib import Path
+print('os.path.getsize(path)')
+print('Size of Path.cwd() = ', os.path.getsize(Path.cwd()))
+print('Size of C:\\ = ', os.path.getsize('C:\\'))
+print('Size of C:\\Users\\Yaroslav\\Videos = ', os.path.getsize('C:\\Users\\Yaroslav\\Videos'))
+print('Size of C:\\Users\\Yaroslav\\Videos\\Пользовательские исследования.mkv = ', os.path.getsize('C:\\Users\\Yaroslav\\Videos\\Пользовательские исследования.mkv'))
+
+print(' os.listdir(path)')
+print(os.listdir('C:\\для харду\\програмування\\код\\Here-im-learning-python\\book_automate_the_borring_stuff_with_python\\part 2 Automating Tasks\\8 input validation'))
+
+print('totalSize')
+totalSize = 0
+
+for filename in os.listdir('C:\\для харду\\програмування\\код\\Here-im-learning-python\\book_automate_the_borring_stuff_with_python\\part 2 Automating Tasks\\8 input validation'):
+    totalSize += os.path.getsize(os.path.join('C:\\для харду\\програмування\\код\\Here-im-learning-python\\book_automate_the_borring_stuff_with_python\\part 2 Automating Tasks\\8 input validation', filename))
+print(f'totalSize = {totalSize}')
+"""
 
 
 
+# Modifying a List of Files Using Glob Patterns
 
 
 
