@@ -111,11 +111,38 @@ totalSize = 0
 for filename in os.listdir('C:\\для харду\\програмування\\код\\Here-im-learning-python\\book_automate_the_borring_stuff_with_python\\part 2 Automating Tasks\\8 input validation'):
     totalSize += os.path.getsize(os.path.join('C:\\для харду\\програмування\\код\\Here-im-learning-python\\book_automate_the_borring_stuff_with_python\\part 2 Automating Tasks\\8 input validation', filename))
 print(f'totalSize = {totalSize}')
-"""
-
-
 
 # Modifying a List of Files Using Glob Patterns
+from pathlib import Path
+p = Path('C:/Users/Yaroslav/Desktop')
+print(p.glob('*'))
+print(list(p.glob('*'))) # Make a List from the generator
+
+# Checking Path Validity
+from pathlib import Path
+
+p = Path.cwd()
+print(p)
+x = p / '123.txt'
+print(x)
+
+print('exists ', p.exists())
+print('p isFile', p.is_file())
+print('x isFile', x.is_file())
+print('p isDir', p.is_dir())
+print('x isDir', x.is_dir())
+
+# The File Reading/Writing Process
+from pathlib import Path
+p = Path('spam.txt')
+p.write_text('Hello, world!')
+print(p.read_text())
+"""
+
+# Opening Files with the open() Function
+from pathlib import Path
+p = Path.home()/'Documents'/'testDoc.txt'
+print(p.exists())
 
 
 
