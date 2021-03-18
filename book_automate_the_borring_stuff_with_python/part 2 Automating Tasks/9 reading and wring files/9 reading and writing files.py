@@ -137,16 +137,65 @@ from pathlib import Path
 p = Path('spam.txt')
 p.write_text('Hello, world!')
 print(p.read_text())
-"""
 
 # Opening Files with the open() Function
+# Reading the Contents of Files
+
 from pathlib import Path
 p = Path.home()/'Documents'/'testDoc.txt'
 print(p.exists())
+testDoc = open(p)
+testDocContent = testDoc.read()
+print('testDocContent', testDocContent)
+testDocContentListed = testDoc.readlines()
+print('testDocContentListed', testDocContentListed)
+
+print(1.1)
+p1 = Path.home()/'Documents'/'testDoc.txt'
+testDoc = open(p1)
+testDocContentListed = testDoc.readlines()
+print('testDocContentListed', testDocContentListed)
+
+print(2)
+x = Path.home()/'Documents'/'sonnet.txt'
+print(p.exists())
+sonnetDoc = open(x)
+sonnetDocContentListed = sonnetDoc.readlines()
+print('sonnetDocContentListed', sonnetDocContentListed)
+
+# Writing to Files
+from pathlib import Path
+import os
+print(Path.cwd())
+p = Path('testDoc.txt')
+file = open('testDoc.txt')
+fileContent = file.read()
+print(fileContent)
+
+# Writing to Files
+from pathlib import Path
+import os
+print(Path.cwd())
+p = Path('testDoc.txt')
+file = open('testDoc.txt', 'w')
+file.write('hello world!\n')
+file.close()
+file = open('testDoc.txt', 'a')
+file.write('bacon is not a vegetable')
+file.close()
+file = open('testDoc.txt')
+print(file.read())
+file.close()
 
 
+# Saving Variables with the shelve Module
+import shelve
+shelfFile = shelve.open('mydata')
+cats = ['Zophie', 'Pooka', 'Simon']
+shelfFile['cats'] = cats
+shelfFile.close()
 
-
+"""
 
 
 
