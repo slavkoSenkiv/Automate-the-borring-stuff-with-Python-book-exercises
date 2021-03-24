@@ -10,16 +10,15 @@ TEXT = {'agree': """Yes, I agree. That sounds fine to me""",
 # Step 2: Handle Command Line Arguments
 
 import sys, pyperclip
-if len(sys.argv) < 2:
-        print('Usage: python mclip.py [keyphrase] - copy phrase text')
+if len(sys.argv) < 2:   
+        print('You need to enter " mclip.py [keyphrase] "  ')
         sys.exit()
 
 keyphrase = sys.argv[1]         # first command line arg is the keyphrase
+name = sys.argv[2]
 
 if keyphrase in TEXT:
-        pyperclip.copy(TEXT[keyphrase])
-        print('Text for ' + keyphrase + ' copied to clip board')
+        pyperclip.copy(TEXT[keyphrase] + ' dear ' + name)
+        print('Text for keyphrase " ' + keyphrase + ' " copied to clip board')
 else:
-        print('there is no text for ' + keyphrase)
-
-#TODO: make the program to input the desider recepient name inside the desired messege from winR bar for exmp the command will be "mclip Slavko busy" and the output will be "Dear slavko im busy"
+        print('there is no text for keyphrase " ' + keyphrase + '"')
