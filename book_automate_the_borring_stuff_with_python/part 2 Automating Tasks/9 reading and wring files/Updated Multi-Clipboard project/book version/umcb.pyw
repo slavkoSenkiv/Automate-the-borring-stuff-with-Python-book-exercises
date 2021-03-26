@@ -12,9 +12,10 @@ umcbShelf = shelve.open('umcb')
 if len(sys.argv) == 3 and sys.argv[1].lower() == 'save':
     umcbShelf[sys.argv[2]] = pyperclip.paste()
 elif len(sys.argv) == 2:
+    # TODO: List keywords and load content.
+    if sys.argv[1].lower() == 'list':
+        pyperclip.copy(str(list(umcbShelf.keys())))
+    elif sys.argv[1] in umcbShelf:
+        pyperclip.copy(umcbShelf[sys.argv[1]])
 
-
-# TODO: List keywords and load content.
-
-    umcbShelf.close() Make your code look like the following:
-
+umcbShelf.close()

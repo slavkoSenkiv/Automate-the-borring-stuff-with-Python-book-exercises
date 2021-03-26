@@ -1,0 +1,1 @@
+@pyw.exe C:\для харду\програмування\код\Here-im-learning-python\book_automate_the_borring_stuff_with_python\part 2 Automating Tasks\9 reading and wring files\Updated Multi-Clipboard project\my version\umcbmv.pyw %*
