@@ -9,6 +9,9 @@ for found_match in regex.findall(text):
     for item in found_match:
         if item != '':
             reg = re.compile(r'{}'.format(item))
-            input_text = input(f'enter value for {item}')
+            input_text = input(f'enter value for {item}: ')
             text = reg.sub(input_text, text, 1)
 
+file = open('testFile.txt', 'w')
+file.write(text)
+file.close()
