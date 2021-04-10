@@ -14,10 +14,9 @@ def backupToZip(folder):
     number = 1
     while True:
         zipFileName = os.path.basename(folder) + '_' + str(number) + '.zip'
-        if os.path.exists(zipFileName):
+        if not os.path.exists(zipFileName):
             break
         number += 1
-
 
     # Create the New ZIP File
     print(f'Creating {zipFileName}...')
@@ -31,12 +30,11 @@ def backupToZip(folder):
 
         # Add all the files in this folder to the ZIP file
         for fileName in fileNames:
-            # newBase = os.path.basename(folder) + '_'
             if fileName.startswith(os.path.basename(folder) + '_') and fileName.endswith('.zip'):
-                continue  # don't back up the backup Zip files
+                continue  # don't back up the backup ZIP files
             backupZip.write(os.path.join(folderName, fileName))
-        backupZip.close()
-        print('Done.')
+
+    backupZip.close()
+    print('Done.')
 
 backupToZip('C:\\fl1')
-
