@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56910e0c-ba2c-4cda-a655-06c8bcbb70fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Selective Copy Project/selective copy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Selective Copy Project/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../main.py" beforeDir="false" />
-    </list>
+    <list default="true" id="56910e0c-ba2c-4cda-a655-06c8bcbb70fe" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +26,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
   </component>
   <component name="RunManager" selected="Python.Deleting Unneeded Files project">
     <configuration name="Deleting Unneeded Files project" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
