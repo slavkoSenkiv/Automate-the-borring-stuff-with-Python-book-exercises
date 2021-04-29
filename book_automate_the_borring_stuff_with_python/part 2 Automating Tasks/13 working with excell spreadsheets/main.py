@@ -66,13 +66,44 @@ for rowOfCellObjects in sheet['a1':'c3']:
     for cellObj in rowOfCellObjects:
         print(cellObj.coordinate, cellObj.value)
     print('___ END OF ROW ___')
-"""
+
 import openpyxl
 wb = openpyxl.load_workbook('example.xlsx')
 sheet = wb.active
 print(list(sheet.columns)[1]) # get second column cell
 for cellObj in list(sheet.columns)[1]:
     print(cellObj.value)
+
+# Writing Excel Documents
+# Creating and Saving Excel Documents
+import openpyxl
+wb = openpyxl.Workbook() # creates a blank workbook
+print(wb.sheetnames) # it starts with one sheet
+sheet = wb.active
+print(sheet.title)
+sheet.title = 'Spam bacon eggs' # change the title
+print(wb.sheetnames)
+
+import openpyxl
+wb = openpyxl.load_workbook('example.xlsx')
+sheet = wb.active
+sheet.title = 'spam spam'
+wb.save('example_copy.xlsx') # save the workbook
+"""
+
+# Creating and Removing Sheets
+impo
+
+
+
+
+# Creating and Removing Sheets
+
+
+
+
+
+
 
 
 
