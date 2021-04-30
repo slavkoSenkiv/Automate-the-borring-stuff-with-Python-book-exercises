@@ -89,15 +89,33 @@ wb = openpyxl.load_workbook('example.xlsx')
 sheet = wb.active
 sheet.title = 'spam spam'
 wb.save('example_copy.xlsx') # save the workbook
+
+
+# Creating and Removing Sheets
+import openpyxl
+wb = openpyxl.Workbook()
+print(wb.sheetnames)
+wb.create_sheet() # add a new sheet
+print(wb.sheetnames)
+# create a new sheet at index 0
+wb.create_sheet(index=0, title='first sheet')
+print(wb.sheetnames)
+wb.create_sheet(index=2, title='middle sheet')
+print(wb.sheetnames)
+del wb['middle sheet']
+del wb['Sheet1']
+print(wb.sheetnames)
 """
 
-# Creating and Removing Sheets
-impo
+# Writing Values to Cells
+import openpyxl
+wb = openpyxl.Workbook()
+sheet = wb['Sheet']
+sheet['A1'] = 'Hello, world!'  # edit the cell's value
+print(sheet['A1'].value)
 
 
 
-
-# Creating and Removing Sheets
 
 
 
