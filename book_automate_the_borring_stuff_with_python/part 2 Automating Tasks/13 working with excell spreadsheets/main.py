@@ -105,7 +105,6 @@ print(wb.sheetnames)
 del wb['middle sheet']
 del wb['Sheet1']
 print(wb.sheetnames)
-"""
 
 # Writing Values to Cells
 import openpyxl
@@ -113,6 +112,62 @@ wb = openpyxl.Workbook()
 sheet = wb['Sheet']
 sheet['A1'] = 'Hello, world!'  # edit the cell's value
 print(sheet['A1'].value)
+
+# Setting the Font Style of Cells
+import openpyxl
+from openpyxl.styles import Font
+wb = openpyxl.Workbook()
+sheet = wb['Sheet']
+italic24Font = Font(size=24, italic=True) # Create a font
+sheet['A1'].font = italic24Font # apply the font to a1
+sheet['A1'] = 'hello world'
+wb.save('styles.xlsx')
+
+# Font Objects
+# Formulas
+import openpyxl
+wb = openpyxl.Workbook()
+sheet = wb.active
+sheet['A1'] = 200
+sheet['A2'] = 300
+sheet['A3'] = '=SUM(A1:A2)' # set the formula
+wb.save('writeFormula.xlsx')
+
+# Adjusting Rows and Columns
+# Setting Row Height and Column Width
+
+import openpyxl
+wb = openpyxl.Workbook()
+sheet = wb.active
+sheet['A1'] = 'Tall row'
+sheet['B2'] = 'Wide Column'
+sheet.row_dimensions[1].height = 70
+sheet.column_dimensions['B'].width = 20
+wb.save('dimensions.xlsx')
+"""
+# Merging and Unmerging Cells
+import openpyxl
+wb = openpyxl.Workbook()
+sheet = wb.active
+sheet.merge_cells('A1:D3') # merge all these cells
+sheet['A1'] = 'twelve cells merged together'
+sheet.merge_cells('C5:D5') # merge these two cells
+sheet['C5'] = 'Two merged cells'
+wb.save('merged.xlsx')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
