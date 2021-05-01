@@ -144,7 +144,7 @@ sheet['B2'] = 'Wide Column'
 sheet.row_dimensions[1].height = 70
 sheet.column_dimensions['B'].width = 20
 wb.save('dimensions.xlsx')
-"""
+
 # Merging and Unmerging Cells
 import openpyxl
 wb = openpyxl.Workbook()
@@ -155,6 +155,23 @@ sheet.merge_cells('C5:D5') # merge these two cells
 sheet['C5'] = 'Two merged cells'
 wb.save('merged.xlsx')
 
+# Freezing Panes
+"""
+#  Charts
+
+import openpyxl
+wb = openpyxl.Workbook()
+sheet = wb.active
+for i in range(1, 11): # create some data in column A
+    sheet['A' + str(i)] = i
+
+refObj = openpyxl.chart.Reference(sheet, min_col=1, min_row=1, max_col=1, max_row=10)
+seriesObj = openpyxl.chart.Series(refObj, title='First series')
+chartObj = openpyxl.chart.PieChart()
+chartObj.title = 'My Chart'
+chartObj.append(seriesObj)
+sheet.add_chart(chartObj, 'C5')
+wb.save('sampleChart.xlsx')
 
 
 
