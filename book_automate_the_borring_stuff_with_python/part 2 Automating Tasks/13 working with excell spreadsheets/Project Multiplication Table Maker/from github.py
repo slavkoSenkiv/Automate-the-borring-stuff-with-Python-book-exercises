@@ -1,55 +1,40 @@
-#! python3
-# multiplicationTableMaker.py - Takes number N from command line,
-# and creates N x N multiplication table in an Excel spreadsheet.
-
-import openpyxl, sys
-
+import openpyxl
 from openpyxl.styles import Font
 
-if len(sys.argv) == 2:
+num = int(input('enter number...'))
+wb = openpyxl.Workbook()
+sheet = wb.active
 
-    try:
-        num = int(sys.argv[1])
+for y in range(num + 1):
+    for x in range(num + 1):
 
-    except Exception as e:
-        print(e)
+        # Check if in header row or column.
+        isHeader = False
 
-    wb = openpyxl.Workbook()
-    sheet = wb.active
+        if x == 0 and y == 0:
+            isHeader = True
+            n = ''
 
-    for y in range(num + 1):
-        for x in range(num + 1):
+        elif x == 0:
+            isHeader = True
+            n = y
 
-            # Check if in header row or column.
-            isHeader = False
+        elif y == 0:
+            isHeader = True
+            n = x
 
-            if x == 0 and y == 0:
-                isHeader = True
-                n = ''
+        else:
+            n = x * y
 
-            elif x == 0:
-                isHeader = True
-                n = y
+        c = sheet.cell(row=y + 1, column=x + 1)
 
-            elif y == 0:
-                isHeader = True
-                n = x
+        if isHeader:
+            c.font = Font(bold=True)
 
-            else:
-                n = x * y
+        c.value = n
 
-            c = sheet.cell(row=y + 1, column=x + 1)
+f = 'multiplication_table_' + str(num) + '.xlsx'
 
-            if isHeader:
-                c.font = Font(bold=True)
+wb.save(f)
 
-            c.value = n
-
-    f = 'multiplication_table_' + str(num) + '.xlsx'
-
-    wb.save(f)
-
-    print('Saved as ' + f)
-
-else:
-    print('Please include a number in your argument.')
+print('Saved as ' + f)
