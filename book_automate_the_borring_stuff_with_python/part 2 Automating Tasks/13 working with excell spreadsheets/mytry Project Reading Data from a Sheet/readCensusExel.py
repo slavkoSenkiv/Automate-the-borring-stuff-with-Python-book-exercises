@@ -12,6 +12,7 @@ for row in range(2, sheet.max_row + 1):
     pop    = sheet['D' + str(row)].value
 
     censusData.setdefault(state, {})
+
     censusData[state].setdefault(county, {'tracts': 0, 'pop': 0})
 
     censusData[state][county]['tracts'] += 1
