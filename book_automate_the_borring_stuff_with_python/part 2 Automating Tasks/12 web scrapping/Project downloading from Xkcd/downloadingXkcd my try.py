@@ -25,4 +25,3 @@ while not url.endswith('#'):
     url = 'https://xkcd.com' + prevElem.get('href')
 
 print('Done')
-
