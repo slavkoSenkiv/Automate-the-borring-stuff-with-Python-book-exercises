@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/s/7d94e0.css" title="Default"/>
-<title>xkcd: No, The Other One</title>
+<title>xkcd: Health Drink</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <link rel="shortcut icon" href="/s/919f27.ico" type="image/x-icon"/>
 <link rel="icon" href="/s/919f27.ico" type="image/x-icon"/>
@@ -13,9 +13,9 @@
 
 <meta property="og:site_name" content="xkcd">
 
-<meta property="og:title" content="No, The Other One">
-<meta property="og:url" content="https://xkcd.com/2480/">
-<meta property="og:image" content="https://imgs.xkcd.com/comics/no_the_other_one_2x.png">
+<meta property="og:title" content="Health Drink">
+<meta property="og:url" content="https://xkcd.com/2475/">
+<meta property="og:image" content="https://imgs.xkcd.com/comics/health_drink_2x.png">
 <meta name="twitter:card" content="summary_large_image">
 
 </head>
@@ -48,27 +48,27 @@
 </div>
 <div id="middleContainer" class="box">
 
-<div id="ctitle">No, The Other One</div>
+<div id="ctitle">Health Drink</div>
 <ul class="comicNav">
 <li><a href="/1/">|&lt;</a></li>
-<li><a rel="prev" href="/2479/" accesskey="p">&lt; Prev</a></li>
+<li><a rel="prev" href="/2474/" accesskey="p">&lt; Prev</a></li>
 <li><a href="//c.xkcd.com/random/comic/">Random</a></li>
-<li><a rel="next" href="/2481/" accesskey="n">Next &gt;</a></li>
+<li><a rel="next" href="/2476/" accesskey="n">Next &gt;</a></li>
 <li><a href="/">&gt;|</a></li>
 </ul>
 <div id="comic">
-<img src="//imgs.xkcd.com/comics/no_the_other_one.png" title="Key West, Virginia is not to be confused with Key, West Virginia." alt="No, The Other One" srcset="//imgs.xkcd.com/comics/no_the_other_one_2x.png 2x" style="image-orientation:none" />
+<img src="//imgs.xkcd.com/comics/health_drink.png" title="You&#39;d need to keep track of so many people! Would you use, like, Excel or something? Far too fancy for a simple country nanoenzyme developer like me." alt="Health Drink" srcset="//imgs.xkcd.com/comics/health_drink_2x.png 2x" style="image-orientation:none" />
 </div>
 <ul class="comicNav">
 <li><a href="/1/">|&lt;</a></li>
-<li><a rel="prev" href="/2479/" accesskey="p">&lt; Prev</a></li>
+<li><a rel="prev" href="/2474/" accesskey="p">&lt; Prev</a></li>
 <li><a href="//c.xkcd.com/random/comic/">Random</a></li>
-<li><a rel="next" href="/2481/" accesskey="n">Next &gt;</a></li>
+<li><a rel="next" href="/2476/" accesskey="n">Next &gt;</a></li>
 <li><a href="/">&gt;|</a></li>
 </ul>
 <br />
-Permanent link to this comic: https://xkcd.com/2480/<br />
-Image URL (for hotlinking/embedding): https://imgs.xkcd.com/comics/no_the_other_one.png
+Permanent link to this comic: https://xkcd.com/2475/<br />
+Image URL (for hotlinking/embedding): https://imgs.xkcd.com/comics/health_drink.png
 
 <div id="transcript" style="display: none"></div>
 </div>
