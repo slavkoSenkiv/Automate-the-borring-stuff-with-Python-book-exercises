@@ -98,3 +98,24 @@ print(spanElem.get('some_noneexistent_addr') == None)
 print(spanElem.attrs)"""
 
 
+"""from selenium import webdriver
+browser = webdriver.Chrome(executable_path=r'/Users/ysenkiv/Code/chromedriver')
+# browser = webdriver.Firefox(executable_path=r'/Users/ysenkiv/Code/geckodriver')
+print(type(browser))
+browser.get('https://inventwithpython.com')"""
+
+from selenium import webdriver
+browser = webdriver.Chrome(executable_path=r'/Users/ysenkiv/Code/chromedriver')
+browser.get('https://inventwithpython.com')
+try:
+    elem = browser.find_element_by_css_selector('body > div.container > div.container > div:nth-child(3) > div:nth-child(1) > a > img')
+    print('found <$s> element with that class name' % (elem.tag_name))
+except:
+    print('was  not able to fin an element with that name')
+
+import requests, bs4
+res = requests.get('https://inventwithpython.com')
+res.raise_for_status()
+soup = bs4.BeautifulSoup(res.text, 'html.parser')
+imgEl = soup.select('body > div.container > div.container > div:nth-child(3) > div:nth-child(1) > a > img')
+print(imgEl)
