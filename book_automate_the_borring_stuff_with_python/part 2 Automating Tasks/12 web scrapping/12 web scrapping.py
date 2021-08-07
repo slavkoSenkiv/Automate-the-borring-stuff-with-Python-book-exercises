@@ -104,7 +104,7 @@ browser = webdriver.Chrome(executable_path=r'/Users/ysenkiv/Code/chromedriver')
 print(type(browser))
 browser.get('https://inventwithpython.com')"""
 
-from selenium import webdriver
+"""from selenium import webdriver
 browser = webdriver.Chrome(executable_path=r'/Users/ysenkiv/Code/chromedriver')
 browser.get('https://inventwithpython.com')
 try:
@@ -118,4 +118,14 @@ res = requests.get('https://inventwithpython.com')
 res.raise_for_status()
 soup = bs4.BeautifulSoup(res.text, 'html.parser')
 imgEl = soup.select('body > div.container > div.container > div:nth-child(3) > div:nth-child(1) > a > img')
-print(imgEl)
+print(imgEl)"""
+
+from selenium import webdriver
+browser = webdriver.Chrome(executable_path=r'/Users/ysenkiv/Code/chromedriver')
+print(type(browser))
+browser.get('https://inventwithpython.com')
+try:
+    elem = browser.find_element_by_class_name('cover-thumb')
+    print(f'found {elem.tag_name} element with that class name')
+except:
+    print('found nothing')
