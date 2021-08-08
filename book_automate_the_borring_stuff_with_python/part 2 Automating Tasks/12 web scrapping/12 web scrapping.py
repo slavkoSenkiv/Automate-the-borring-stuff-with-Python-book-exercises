@@ -120,7 +120,8 @@ soup = bs4.BeautifulSoup(res.text, 'html.parser')
 imgEl = soup.select('body > div.container > div.container > div:nth-child(3) > div:nth-child(1) > a > img')
 print(imgEl)"""
 
-from selenium import webdriver
+# Finding Elements on the Page
+"""from selenium import webdriver
 browser = webdriver.Chrome(executable_path=r'/Users/ysenkiv/Code/chromedriver')
 print(type(browser))
 browser.get('https://inventwithpython.com')
@@ -128,4 +129,44 @@ try:
     elem = browser.find_element_by_class_name('cover-thumb')
     print(f'found {elem.tag_name} element with that class name')
 except:
-    print('found nothing')
+    print('found nothing')"""
+
+# Clicking the links
+"""from selenium import webdriver
+browser = webdriver.Chrome(executable_path=r'/Users/ysenkiv/Code/chromedriver')
+browser.get('https://inventwithpython.com')
+linkElem = browser.find_element_by_link_text('Read Online for Free')
+print(type(linkElem))
+linkElem.click()"""
+
+# Filling Out and Submitting Forms
+"""from selenium import webdriver
+browser = webdriver.Chrome(executable_path=r'/Users/ysenkiv/Code/chromedriver')
+browser.get('https://login.metafilter.com')
+print('1')
+userElem = browser.find_element_by_id('user_name')
+print('2')
+userElem.send_keys('slavko_senkiv')
+print('3')
+
+
+passElem = browser.find_element_by_id('user_pass')
+print('4')
+passElem.send_keys('slavko_pass_here')
+print('5')
+passElem.submit()
+print('6')"""
+
+
+# Sending Special Keys
+"""from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
+browser = webdriver.Chrome(executable_path=r'/Users/ysenkiv/Code/chromedriver')
+browser.get('https://automatetheboringstuff.com/')
+htmlElem = browser.find_element_by_tag_name('html')
+htmlElem.send_keys(Keys.END)
+# htmlElem.send_keys(Keys.HOME)"""
+
+# Clicking Browser Buttons
+
+
