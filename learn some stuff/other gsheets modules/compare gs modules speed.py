@@ -5,13 +5,16 @@ import gspread
 import openpyxl
 
 
-def summ(list, row, column):
-    total_sum = 0
+# <editor-fold desc="functions">
+def summ(list, row, column, start_time):
     for rows in list:
         for cells in rows:
-            total_sum += int(cells)
-    timer = round(time.time() - start_gspread, 2)
+            cells = cells * cells
+
+    timer = round(time.time() - start_time, 2)
     result_sheet.cell(row=row, column=column).value = timer
+# </editor-fold>
+
 
 # <editor-fold desc="variables">
 gs_name = 'test personal acc'
@@ -29,22 +32,41 @@ result_sheet['F1'].value = 'pygsheets import time'
 # </editor-fold>
 
 for row in range(2, 4):
+    """# <editor-fold desc="pygsheets">
+    start_pygsheets = time.time()
+    client = pygsheets.authorize(client_secret=path_to_client_secret)
+    gs_pygsheets = client.open(gs_name)
+    sheet = gs_pygsheets.worksheet('title', 'Sheet1')
+    list_of_lists_pygsheets = sheet.range('A1:Z1000', returnas='matrix')
+    summ(list_of_lists_pygsheets, row, 3, start_pygsheets)
+    # </editor-fold>"""
+
+    """# <editor-fold desc="ezsheets">
+    start_ezsheets = time.time()
+    gs_ezsheets = ezsheets.Spreadsheet(gs_name)
+    sheet = gs_ezsheets['Sheet1']
+    list_of_lists_ezsheets = sheet.getRows()
+    summ(list_of_lists_ezsheets, row, 2, start_ezsheets)
+    # </editor-fold>"""
+
     # <editor-fold desc="gspread">
     start_gspread = time.time()
     gc = gspread.oauth(credentials_filename=path_to_gspread_credentials_json, authorized_user_filename=path_to_gspread_authorized_user)
     gs = gc.open(gs_name)
     sheet1 = gs.get_worksheet(0)
-    total_summ = 0
     list_of_lists_gspread = sheet1.get_all_values()
-    summ(list_of_lists_gspread, row, 1)
+    summ(list_of_lists_gspread, row, 1, start_gspread)
     # </editor-fold>
 
-    # <editor-fold desc="ezsheets">
-    start_ezsheets = time.time()
-    gs_ezsheets = ezsheets.Spreadsheet(gs_name)
-    sheet = gs_ezsheets['Sheet1']
-    list_of_lists_ezsheets = sheet.getRows()
-    summ(list_of_lists_ezsheets, row, 2)
+"""print(1)
+for row in range(5, 7):
+    # <editor-fold desc="gspread">
+    start_gspread = time.time()
+    gc = gspread.oauth(credentials_filename=path_to_gspread_credentials_json, authorized_user_filename=path_to_gspread_authorized_user)
+    gs = gc.open(gs_name)
+    sheet1 = gs.get_worksheet(0)
+    list_of_lists_gspread = sheet1.get_all_values()
+    summ(list_of_lists_gspread, row, 1, start_gspread)
     # </editor-fold>
 
     # <editor-fold desc="pygsheets">
@@ -53,8 +75,46 @@ for row in range(2, 4):
     gs_pygsheets = client.open(gs_name)
     sheet = gs_pygsheets.worksheet('title', 'Sheet1')
     list_of_lists_pygsheets = sheet.range('A1:Z1000', returnas='matrix')
-    summ(list_of_lists_pygsheets, row, 3)
+    summ(list_of_lists_pygsheets, row, 3, start_pygsheets)
     # </editor-fold>
+
+    # <editor-fold desc="ezsheets">
+    start_ezsheets = time.time()
+    gs_ezsheets = ezsheets.Spreadsheet(gs_name)
+    sheet = gs_ezsheets['Sheet1']
+    list_of_lists_ezsheets = sheet.getRows()
+    summ(list_of_lists_ezsheets, row, 2, start_ezsheets)
+    # </editor-fold>
+
+print(2)
+for row in range(8, 10):
+    # <editor-fold desc="ezsheets">
+    start_ezsheets = time.time()
+    gs_ezsheets = ezsheets.Spreadsheet(gs_name)
+    sheet = gs_ezsheets['Sheet1']
+    list_of_lists_ezsheets = sheet.getRows()
+    summ(list_of_lists_ezsheets, row, 2, start_ezsheets)
+    # </editor-fold>
+
+    # <editor-fold desc="gspread">
+    start_gspread = time.time()
+    gc = gspread.oauth(credentials_filename=path_to_gspread_credentials_json,
+                       authorized_user_filename=path_to_gspread_authorized_user)
+    gs = gc.open(gs_name)
+    sheet1 = gs.get_worksheet(0)
+    list_of_lists_gspread = sheet1.get_all_values()
+    summ(list_of_lists_gspread, row, 1, start_gspread)
+    # </editor-fold>
+
+    # <editor-fold desc="pygsheets">
+    start_pygsheets = time.time()
+    client = pygsheets.authorize(client_secret=path_to_client_secret)
+    gs_pygsheets = client.open(gs_name)
+    sheet = gs_pygsheets.worksheet('title', 'Sheet1')
+    list_of_lists_pygsheets = sheet.range('A1:Z1000', returnas='matrix')
+    summ(list_of_lists_pygsheets, row, 3, start_pygsheets)
+    # </editor-fold>"""
+
 
 wb.save('fastest gsheets module.xlsx')
 
