@@ -21,5 +21,5 @@ path_to_gspread_authorized_user = '/Users/ysenkiv/.config/gspread/authorized_use
 
 gc = gspread.oauth()
 # (credentials_filename=path_to_gspread_credentials_json, authorized_user_filename=path_to_gspread_authorized_user)
-gs = gc.open(gs_name2)
+gs = gc.open(gs_name1)
 print(gs.title)

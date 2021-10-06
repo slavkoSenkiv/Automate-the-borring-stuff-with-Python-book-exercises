@@ -5,9 +5,8 @@ import gspread
 import openpyxl
 
 gs_name = 'test personal acc'
-path_to_gspread_credentials_json = '/Here-im-learning-python/learn some stuff/other gsheets modules/acces_files/credentials.json'
-path_to_gspread_authorized_user = '/Here-im-learning-python/learn some stuff/other gsheets modules/acces_files/authorized_user.json'
-path_to_client_secret = '/Here-im-learning-python/learn some stuff/other gsheets modules/acces_files/client_secret.json'
+path_to_gspread_credentials_json = '/Users/ysenkiv/Code/access files/credentials.json'
+path_to_gspread_authorized_user = '/Users/ysenkiv/Code/access files/authorized_user.json'
 
 
 def mult1(list1, start_time):  # row, column,
@@ -26,11 +25,19 @@ def mult1(list1, start_time):  # row, column,
 
 
 # <editor-fold desc="gspread">
-start_gspread = time.time()
+"""start_gspread = time.time()
 gc = gspread.oauth(credentials_filename=path_to_gspread_credentials_json, authorized_user_filename=path_to_gspread_authorized_user)
 gs = gc.open(gs_name)
 sheet1 = gs.worksheet('test2')
 list_of_lists_gspread = sheet1.get_all_values()
 sheet1.update('A1:Z1000', mult1(list_of_lists_gspread, start_gspread))
+"""# </editor-fold>
 
-# </editor-fold>
+
+gc = gspread.oauth(credentials_filename=path_to_gspread_credentials_json, authorized_user_filename=path_to_gspread_authorized_user)
+gs = gc.open(gs_name)
+sheet1 = gs.worksheet('test')
+# sheet1.delete_rows(1, 2)
+
+list1 = sheet1.col_values(1)
+print(list1)
